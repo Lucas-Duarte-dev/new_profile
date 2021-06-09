@@ -1,8 +1,9 @@
 import { GetServerSideProps } from "next";
-import { useState } from "react";
-import { api } from "../services/api";
+import React, { useState } from "react";
 import { format, parseISO } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
+import { api } from "../services/api";
+import styles from "../styles/app.module.scss";
 
 type HomeProps = {
   user: User;
@@ -13,18 +14,35 @@ type User = {
   bio: string;
   created_at: string;
   name: string;
+  login: string;
   repos_url: string;
   location: string;
+  date: string;
 };
 
 export default function Home({ user }: HomeProps) {
   const [githubUser, setGithubUser] = useState<User>(user);
-
-  console.log(githubUser);
-
   return (
-    <div>
-      <section></section>
+    <div className={styles.container}>
+      <div className={styles.profileContainer}>
+        <section>
+          <img src={githubUser.avatar_url} alt={githubUser.name} />
+          <div>
+            <h2>{githubUser.name}</h2>
+            <a href="https://www.github.com/Lucas-Duarte-dev" target="_blank">
+              <img src="/icons/github.svg" />
+              {githubUser.login}
+            </a>
+            <p>Dia de criação: {githubUser.created_at}</p>
+          </div>
+        </section>
+        <section>
+          <p>
+            <img src="/icons/calendar.svg" /> {githubUser.date}
+          </p>
+          <div>{githubUser.bio}</div>
+        </section>
+      </div>
     </div>
   );
 }
@@ -39,8 +57,12 @@ export const getServerSideProps: GetServerSideProps = async () => {
       locale: ptBR,
     }),
     name: data.name,
+    login: data.login,
     repos_url: data.repos_url,
     location: data.location,
+    date: format(Date.now(), "d MMM yyyy", {
+      locale: ptBR,
+    }),
   };
 
   return {

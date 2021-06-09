@@ -22,7 +22,11 @@ body {
 button {
   cursor: pointer;
 }
-
+p,
+span {
+  font-family: Inter, sans-serif;
+  color: #d3d3d3;
+}
 input,
 textarea,
 select {
