@@ -1,0 +1,18 @@
+.divisorContainer {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+
+  & section {
+    height: 1px;
+    width: 100%;
+  }
+
+  & section:nth-child(1) {
+    background: linear-gradient(120deg, #aaa7a7, #e1e1e131);
+  }
+  & section:nth-child(2) {
+    background: linear-gradient(60deg, #e1e1e131, #aaa7a7);
+  }
+}

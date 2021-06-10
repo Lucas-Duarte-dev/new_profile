@@ -4,6 +4,7 @@ import { format, parseISO } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 import { api } from "../services/api";
 import styles from "../styles/app.module.scss";
+import Divisor from "../components/Divisor";
 
 type HomeProps = {
   user: User;
@@ -29,11 +30,11 @@ export default function Home({ user }: HomeProps) {
           <img src={githubUser.avatar_url} alt={githubUser.name} />
           <div>
             <h2>{githubUser.name}</h2>
+            <p>Criação github: {githubUser.created_at}</p>
             <a href="https://www.github.com/Lucas-Duarte-dev" target="_blank">
               <img src="/icons/github.svg" />
               {githubUser.login}
             </a>
-            <p>Dia de criação: {githubUser.created_at}</p>
           </div>
         </section>
         <section>
@@ -43,6 +44,7 @@ export default function Home({ user }: HomeProps) {
           <div>{githubUser.bio}</div>
         </section>
       </div>
+      <Divisor />
     </div>
   );
 }
