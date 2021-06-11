@@ -45,6 +45,36 @@ export default function Home({ user }: HomeProps) {
         </section>
       </div>
       <Divisor />
+      <div className={styles.linksContainer}>
+        <section>
+          <p>Meus repositórios do github:</p>
+          <div>
+            <a href="">Clique aqui</a>
+            <img src="" />
+          </div>
+        </section>
+        <section>
+          <p>Meus repositórios do github:</p>
+          <div>
+            <a href="">Clique aqui</a>
+            <img src="" />
+          </div>
+        </section>
+        <section>
+          <p>Meus repositórios do github:</p>
+          <div>
+            <a href="">Clique aqui</a>
+            <img src="" />
+          </div>
+        </section>
+        <section>
+          <p>Meus repositórios do github:</p>
+          <div>
+            <a href="">Clique aqui</a>
+            <img src="" />
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
