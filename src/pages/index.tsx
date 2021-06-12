@@ -49,29 +49,25 @@ export default function Home({ user }: HomeProps) {
         <section>
           <p>Meus repositórios do github:</p>
           <div>
-            <a href="">Clique aqui</a>
-            <img src="" />
+            <a href="">Clique aqui para acessar</a>
           </div>
         </section>
         <section>
           <p>Meus repositórios do github:</p>
           <div>
-            <a href="">Clique aqui</a>
-            <img src="" />
+            <a href="">Clique aqui para acessar</a>
           </div>
         </section>
         <section>
           <p>Meus repositórios do github:</p>
           <div>
-            <a href="">Clique aqui</a>
-            <img src="" />
+            <a href="">Clique aqui para acessar</a>
           </div>
         </section>
         <section>
           <p>Meus repositórios do github:</p>
           <div>
-            <a href="">Clique aqui</a>
-            <img src="" />
+            <a href="">Clique aqui para acessar</a>
           </div>
         </section>
       </div>
