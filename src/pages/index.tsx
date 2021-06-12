@@ -47,25 +47,30 @@ export default function Home({ user }: HomeProps) {
       <Divisor />
       <div className={styles.linksContainer}>
         <section>
-          <p>Meus repositórios do github:</p>
+          <p>Aqui eu apresento alguns dos meus repositórios no github 🤓</p>
           <div>
             <a href="">Clique aqui para acessar</a>
           </div>
         </section>
         <section>
-          <p>Meus repositórios do github:</p>
+          <p>
+            Todas as minhas redes sociais para quem quiser entrar em contato. 😎
+          </p>
           <div>
             <a href="">Clique aqui para acessar</a>
           </div>
         </section>
         <section>
-          <p>Meus repositórios do github:</p>
+          <p>
+            Aqui apresento um pouco sobre como decidi entrar na área de
+            desenvolvimento e minhas motivações diárias 💜
+          </p>
           <div>
             <a href="">Clique aqui para acessar</a>
           </div>
         </section>
         <section>
-          <p>Meus repositórios do github:</p>
+          <p>Dê seu feedback 🙏🏻</p>
           <div>
             <a href="">Clique aqui para acessar</a>
           </div>
