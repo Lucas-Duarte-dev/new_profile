@@ -47,15 +47,13 @@ export default function Home({ user }: HomeProps) {
       <Divisor />
       <div className={styles.linksContainer}>
         <section>
-          <p>Aqui eu apresento alguns dos meus repositórios no github 🤓</p>
+          <p>Alguns dos meus repositórios no github 🤓</p>
           <div>
             <a href="">Clique aqui para acessar</a>
           </div>
         </section>
         <section>
-          <p>
-            Todas as minhas redes sociais para quem quiser entrar em contato. 😎
-          </p>
+          <p>Todas as minhas redes sociais caso queira entrar em contato. 😁</p>
           <div>
             <a href="">Clique aqui para acessar</a>
           </div>
@@ -76,12 +74,18 @@ export default function Home({ user }: HomeProps) {
           </div>
         </section>
       </div>
+
+      <p>
+        Inspirado no tema{" "}
+        <a href="https://github.com/sdras/night-owl-vscode-theme">Night Owl</a>{" "}
+        💜
+      </p>
     </div>
   );
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const data = (await api.get("Lucas-Duarte-dev")).data;
+  const { data } = await api.get(process.env.PROFILE_GITHUB);
 
   const user = {
     avatar_url: data.avatar_url,

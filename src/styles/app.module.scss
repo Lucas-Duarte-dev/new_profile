@@ -1,14 +1,31 @@
 .container {
   display: flex;
   flex-direction: column;
+
+  & > p {
+    margin-top: 2.5rem;
+    color: #e8e8eb;
+    text-align: center;
+
+    & > a {
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
+    & > a:hover {
+      color: rgb(73, 209, 168);
+    }
+  }
 }
 
 .profileContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2rem 0;
-
+  padding: 3.76rem 1.5rem;
+  background: url("/img/bg.jpg") no-repeat;
+  background-size: cover;
+  margin: 0.5rem 0;
+  border-radius: 0.8rem;
   & section:nth-child(1) {
     display: flex;
     flex-direction: row;
@@ -56,7 +73,6 @@
 
   & section:nth-child(2) {
     width: 20rem;
-
     & > p {
       text-align: right;
       font-size: 1.1rem;
@@ -68,6 +84,7 @@
 
     & > div {
       padding: 1rem 1.5rem;
+      background: #000c1d75;
       color: #d3d3d3;
       font-family: Inter, sans-serif;
       border-radius: 0.5rem;
@@ -86,7 +103,7 @@
 
   & > section {
     width: 100%;
-    height: 9rem;
+
     border-radius: 0.6rem;
     padding: 1.3rem 0.8rem;
     background: #0e1522a8;
@@ -97,6 +114,10 @@
     align-items: center;
     justify-content: space-between;
     text-align: center;
+    transition: transform 0.2s ease-in;
+    &:hover {
+      transform: scale(1.04);
+    }
 
     & > p {
       font-size: 1.2rem;
@@ -109,6 +130,9 @@
       font-family: Roboto, sans-serif;
 
       & > a {
+        padding: 0.4rem 1rem;
+        border-radius: 0.3rem;
+        background: #ffffff18;
         transition: color 0.2s;
       }
       & > a:hover {
