@@ -19,6 +19,7 @@ type User = {
   repos_url: string;
   location: string;
   date: string;
+  html_url: string;
 };
 
 export default function Home({ user }: HomeProps) {
@@ -31,7 +32,7 @@ export default function Home({ user }: HomeProps) {
           <div>
             <h2>{githubUser.name}</h2>
             <p>Criação github: {githubUser.created_at}</p>
-            <a href="https://www.github.com/Lucas-Duarte-dev" target="_blank">
+            <a href={githubUser.html_url} target="_blank">
               <img src="/icons/github.svg" />
               {githubUser.login}
             </a>
@@ -100,6 +101,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     date: format(Date.now(), "d MMM yyyy", {
       locale: ptBR,
     }),
+    html_url: data.html_url,
   };
 
   return {
