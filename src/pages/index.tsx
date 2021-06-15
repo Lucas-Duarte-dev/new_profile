@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { format, parseISO } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 import { api } from "../services/api";
+import Link from "next/link";
+
 import styles from "../styles/app.module.scss";
 import Divisor from "../components/Divisor";
 
@@ -50,7 +52,9 @@ export default function Home({ user }: HomeProps) {
         <section>
           <p>Alguns dos meus repositórios no github 🤓</p>
           <div>
-            <a href="">Clique aqui para acessar</a>
+            <Link href="/repository">
+              <a>Clique aqui para acessar</a>
+            </Link>
           </div>
         </section>
         <section>

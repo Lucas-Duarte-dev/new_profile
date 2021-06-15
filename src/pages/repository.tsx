@@ -7,6 +7,8 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
+import styles from "../styles/repository.module.scss";
+
 type RepositoryProps = {
   repos: Repos[];
 };
@@ -28,14 +30,10 @@ type User = {
 };
 
 export default function Repository({ repos }: RepositoryProps) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [currentValue, setCurrentValue] = useState("");
   const [copySuccess, setCopySuccess] = useState(false);
-  const [element, setElement] = useState<HTMLTextAreaElement[]>();
-  const inputRef = useRef<HTMLInputElement[]>(null);
 
   return (
-    <div>
+    <div className={styles.repos_container}>
       <header>
         <Link href="/">
           <img src="/icons/left_arrow.svg" />
@@ -44,15 +42,9 @@ export default function Repository({ repos }: RepositoryProps) {
       <div>
         {repos.map((repo, index) => {
           return (
-            <div key={repo.id}>
+            <div key={repo.id} className={styles.repos}>
               <header>
-                <Image
-                  height={40}
-                  width={40}
-                  objectFit="cover"
-                  src={repo.owner.avatar_url}
-                  alt={repo.owner.login}
-                />
+                <img src={repo.owner.avatar_url} alt={repo.owner.login} />
                 <span>{repo.owner.login}</span>
               </header>
               <section>
@@ -60,15 +52,13 @@ export default function Repository({ repos }: RepositoryProps) {
                 <p>{repo.description}</p>
                 <span>{repo.language}</span>
                 <div>
-                  <input type="text" value={repo.html_url} id={repo.id} />
+                  <input type="text" value={repo.html_url} />
 
                   <CopyToClipboard
-                    text={currentValue}
+                    text={repo.html_url}
                     onCopy={() => setCopySuccess(true)}
                   >
-                    <button onClick={() => setCurrentValue(repo.html_url)}>
-                      Copiar
-                    </button>
+                    <button onClick={() => setCopySuccess(true)}>Copiar</button>
                   </CopyToClipboard>
                 </div>
               </section>
