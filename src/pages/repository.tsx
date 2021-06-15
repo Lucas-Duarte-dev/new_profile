@@ -4,7 +4,8 @@ import { GetServerSideProps } from "next";
 import { api } from "../services/api";
 import Link from "next/link";
 import Image from "next/image";
-import ReactMarkdown from "react-markdown";
+import { useRef, useState } from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 type RepositoryProps = {
   repos: Repos[];
@@ -27,6 +28,12 @@ type User = {
 };
 
 export default function Repository({ repos }: RepositoryProps) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentValue, setCurrentValue] = useState("");
+  const [copySuccess, setCopySuccess] = useState(false);
+  const [element, setElement] = useState<HTMLTextAreaElement[]>();
+  const inputRef = useRef<HTMLInputElement[]>(null);
+
   return (
     <div>
       <header>
@@ -35,7 +42,7 @@ export default function Repository({ repos }: RepositoryProps) {
         </Link>
       </header>
       <div>
-        {repos.map((repo) => {
+        {repos.map((repo, index) => {
           return (
             <div key={repo.id}>
               <header>
@@ -53,8 +60,16 @@ export default function Repository({ repos }: RepositoryProps) {
                 <p>{repo.description}</p>
                 <span>{repo.language}</span>
                 <div>
-                  <span>Clone: </span>
-                  <code>{repo.html_url}</code>
+                  <input type="text" value={repo.html_url} id={repo.id} />
+
+                  <CopyToClipboard
+                    text={currentValue}
+                    onCopy={() => setCopySuccess(true)}
+                  >
+                    <button onClick={() => setCurrentValue(repo.html_url)}>
+                      Copiar
+                    </button>
+                  </CopyToClipboard>
                 </div>
               </section>
               <span>{repo.created_at}</span>

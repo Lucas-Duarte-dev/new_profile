@@ -1,5 +1,5 @@
 {
-  "name": "profile",
+  "name": "lucas",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,17 +9,24 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "clipboard": "^2.0.8",
     "date-fns": "^2.22.1",
     "next": "10.2.3",
     "react": "17.0.2",
+    "react-copy-to-clipboard": "^5.0.3",
     "react-dom": "17.0.2",
-    "react-markdown": "^6.0.2",
     "sass": "^1.34.1"
   },
   "devDependencies": {
     "@types/node": "^15.12.2",
     "@types/react": "^17.0.9",
+    "@types/react-copy-to-clipboard": "^5.0.0",
     "@types/react-dom": "^17.0.6",
+    "@types/react-syntax-highlighter": "^13.5.0",
     "typescript": "^4.3.2"
-  }
+  },
+  "main": "index.js",
+  "repository": "git@github.com:Lucas-Duarte-dev/new_profile.git",
+  "author": "Lucas-Duarte-dev <lucasduarteb2000@hotmail.com>",
+  "license": "MIT"
 }
