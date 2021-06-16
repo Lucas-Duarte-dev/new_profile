@@ -25,7 +25,7 @@
 }
 
 .repos {
-  background: #021b338e;
+  background: #021f41;
   padding: 1.756rem;
   border-radius: 0.4rem;
   display: flex;
@@ -53,13 +53,9 @@
       margin-bottom: 1rem;
     }
 
-    & > p {
-      color: #acacac;
-      margin-bottom: 0.7rem;
-    }
-
     & > span {
-      background: #56d17b5e;
+      border: 1px solid #ffffff9f;
+      color: #ffffff9f;
       font-size: 0.8rem;
       padding: 0.2rem 0.5rem;
       border-radius: 0.8rem;
@@ -74,7 +70,7 @@
         height: 2.8rem;
         width: 100%;
         margin-right: 0.5rem;
-        border: none;
+        border: 1px solid #8d8a8a;
         color: #e4e4e4;
         background: #0e0e0ec5;
         font-weight: 500;

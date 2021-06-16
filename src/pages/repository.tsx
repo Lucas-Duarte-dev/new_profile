@@ -3,8 +3,7 @@ import ptBR from "date-fns/locale/pt-BR";
 import { GetServerSideProps } from "next";
 import { api } from "../services/api";
 import Link from "next/link";
-import Image from "next/image";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import styles from "../styles/repository.module.scss";
@@ -49,10 +48,9 @@ export default function Repository({ repos }: RepositoryProps) {
               </header>
               <section>
                 <h2>{repo.name}</h2>
-                <p>{repo.description}</p>
                 <span>{repo.language}</span>
                 <div>
-                  <input type="text" value={repo.html_url} />
+                  <input type="text" value={repo.html_url} disabled />
 
                   <CopyToClipboard
                     text={repo.html_url}
@@ -72,11 +70,12 @@ export default function Repository({ repos }: RepositoryProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const { data } = await api.get(
-    `https://api.github.com/users/${process.env.PROFILE_GITHUB}/repos`
-  );
+  const { data } = await api.get(`${process.env.PROFILE_GITHUB}/repos`);
 
-  const withoutForks = data.filter((repo) => repo.fork !== true).reverse();
+  const withoutForks = data
+    .filter((repo) => repo.fork !== true)
+    .reverse()
+    .slice(0, 6);
 
   const repos = withoutForks.map((repo) => {
     return {
@@ -84,7 +83,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
       name: repo.name,
       language: repo.language,
       html_url: repo.html_url,
-      description: repo.description !== "null" && repo.description,
       created_at: format(parseISO(repo.created_at), "d MMM yy", {
         locale: ptBR,
       }),
