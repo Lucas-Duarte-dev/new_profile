@@ -47,7 +47,10 @@ export default function Repository({ repos }: RepositoryProps) {
                 <span>{repo.owner.login}</span>
               </header>
               <section>
-                <h2>{repo.name}</h2>
+                <div>
+                  <span>{repo.name}</span>
+                  <span>{repo.created_at}</span>
+                </div>
                 <span>{repo.language}</span>
                 <div>
                   <input type="text" value={repo.html_url} disabled />
@@ -60,7 +63,6 @@ export default function Repository({ repos }: RepositoryProps) {
                   </CopyToClipboard>
                 </div>
               </section>
-              <span>{repo.created_at}</span>
             </div>
           );
         })}

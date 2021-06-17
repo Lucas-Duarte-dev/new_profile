@@ -1,4 +1,8 @@
 .containerApp {
   max-width: 60rem;
   margin: 0 auto;
+
+  @media (min-width: 768px) {
+    width: 100%;
+  }
 }

@@ -106,7 +106,7 @@
 
     border-radius: 0.6rem;
     padding: 1.3rem 0.8rem;
-    background: #102a44;
+    background: var(--blue-600);
     margin-bottom: 1.4rem;
 
     display: flex;
@@ -125,7 +125,7 @@
 
     & > div {
       margin-top: 1.5rem;
-      color: #fff;
+      color: var(--white);
 
       font-family: Roboto, sans-serif;
 
@@ -136,7 +136,7 @@
         transition: color 0.2s;
       }
       & > a:hover {
-        color: rgb(73, 209, 168);
+        color: var(--green-400);
       }
     }
   }

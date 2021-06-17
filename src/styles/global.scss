@@ -15,8 +15,27 @@
   }
 }
 
+:root {
+  --white: #ffffff;
+  --green-300: #21c7a8;
+  --green-400: #22da6e;
+  --blue-500: #1b90dd4d;
+  --blue-600: #084d8180;
+  --blue-700: #122d42;
+  --blue-900: #000c1d;
+  --purple: #7e57c2;
+  --purple-800: #34248b;
+  --purple-alpha-500: #7e57c2cc;
+  --purple-alpha-800: #7e57c25a;
+  --yellow-600: #ffca28;
+  --red: #ef5350;
+  --description: #d3d3d3;
+}
+
 body {
-  background: #000c1d;
+  background: linear-gradient(180deg, var(--blue-900) 70%, var(--purple-800));
+  background-size: cover;
+  height: 100vh;
 }
 
 button {
