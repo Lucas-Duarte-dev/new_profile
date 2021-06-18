@@ -25,26 +25,25 @@ type User = {
 };
 
 export default function Home({ user }: HomeProps) {
-  const [githubUser, setGithubUser] = useState<User>(user);
   return (
     <div className={styles.container}>
       <div className={styles.profileContainer}>
         <section>
-          <img src={githubUser.avatar_url} alt={githubUser.name} />
+          <img src={user.avatar_url} alt={user.name} />
           <div>
-            <h2>{githubUser.name}</h2>
-            <p>Criação github: {githubUser.created_at}</p>
-            <a href={githubUser.html_url} target="_blank">
+            <h2>{user.name}</h2>
+            <p>Criação github: {user.created_at}</p>
+            <a href={user.html_url} target="_blank">
               <img src="/icons/github.svg" />
-              {githubUser.login}
+              {user.login}
             </a>
           </div>
         </section>
         <section>
           <p>
-            <img src="/icons/calendar.svg" /> {githubUser.date}
+            <img src="/icons/calendar.svg" /> {user.date}
           </p>
-          <div>{githubUser.bio}</div>
+          <div>{user.bio}</div>
         </section>
       </div>
       <Divisor />
@@ -52,9 +51,7 @@ export default function Home({ user }: HomeProps) {
         <section>
           <p>Alguns dos meus repositórios no github 🤓</p>
           <div>
-            <Link href="/repository">
-              <a>Clique aqui para acessar</a>
-            </Link>
+            <a href="/repository">Clique aqui para acessar</a>
           </div>
         </section>
         <section>
