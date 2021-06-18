@@ -1,3 +1,4 @@
+import process from "process";
 import { useModal } from "../../context/modalContext";
 import styles from "./modal.module.scss";
 
@@ -14,30 +15,25 @@ export default function Modal() {
           </div>
         </header>
         <section>
-          <div>
-            <a href="">
-              <img src="" alt="social" />
-              <span>Whatsapp</span>
-            </a>
-          </div>
-          <div>
-            <a href="">
-              <img src="" alt="social" />
-              <span>Facebook</span>
-            </a>
-          </div>
-          <div>
-            <a href="">
-              <img src="" alt="social" />
-              <span>Instagram</span>
-            </a>
-          </div>
-          <div>
-            <a href="">
-              <img src="" alt="social" />
-              <span>Linkedin</span>
-            </a>
-          </div>
+          <a href="" target="_blank">
+            <img src="/icons/whatsapp.svg" alt="whatsapp" />
+            <span>Whatsapp</span>
+          </a>
+
+          <a href={process.env.FACEBOOK_LINK} target="_blank">
+            <img src="/icons/facebook.svg" alt="facebook" />
+            <span>Facebook</span>
+          </a>
+
+          <a href={process.env.INSTAGRAM_LINK} target="_blank">
+            <img src="/icons/instagram.svg" alt="instagram" />
+            <span>Instagram</span>
+          </a>
+
+          <a href="" target="_blank">
+            <img src="/icons/linkedin.svg" alt="linkedin" />
+            <span>Linkedin</span>
+          </a>
         </section>
       </div>
     </div>
