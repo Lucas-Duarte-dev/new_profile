@@ -7,6 +7,8 @@ import Link from "next/link";
 
 import styles from "../styles/app.module.scss";
 import Divisor from "../components/Divisor";
+import Modal from "../components/Modal";
+import { useModal } from "../context/modalContext";
 
 type HomeProps = {
   user: User;
@@ -25,6 +27,8 @@ type User = {
 };
 
 export default function Home({ user }: HomeProps) {
+  const { handleOpenModal } = useModal();
+
   return (
     <div className={styles.container}>
       <div className={styles.profileContainer}>
@@ -56,8 +60,8 @@ export default function Home({ user }: HomeProps) {
         </section>
         <section>
           <p>Todas as minhas redes sociais caso queira entrar em contato. 😁</p>
-          <div>
-            <a href="">Clique aqui para acessar</a>
+          <div onClick={handleOpenModal}>
+            <a>Clique aqui para acessar</a>
           </div>
         </section>
         <section>
@@ -82,6 +86,8 @@ export default function Home({ user }: HomeProps) {
         <a href="https://github.com/sdras/night-owl-vscode-theme">Night Owl</a>{" "}
         💜
       </p>
+
+      <Modal />
     </div>
   );
 }
