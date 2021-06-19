@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { format, parseISO } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 import { api } from "../services/api";
-import Link from "next/link";
 
 import styles from "../styles/app.module.scss";
 import Divisor from "../components/Divisor";
@@ -31,23 +30,23 @@ export default function Home({ user }: HomeProps) {
 
   return (
     <div className={styles.container}>
-      <div className={styles.profileContainer}>
+      <div className={styles?.profileContainer}>
         <section>
-          <img src={user.avatar_url} alt={user.name} />
+          <img src={user?.avatar_url} alt={user?.name} />
           <div>
-            <h2>{user.name}</h2>
-            <p>Criação github: {user.created_at}</p>
-            <a href={user.html_url} target="_blank">
+            <h2>{user?.name}</h2>
+            <p>Criação github: {user?.created_at}</p>
+            <a href={user?.html_url} target="_blank">
               <img src="/icons/github.svg" />
-              {user.login}
+              {user?.login}
             </a>
           </div>
         </section>
         <section>
           <p>
-            <img src="/icons/calendar.svg" /> {user.date}
+            <img src="/icons/calendar.svg" /> {user?.date}
           </p>
-          <div>{user.bio}</div>
+          <div>{user?.bio}</div>
         </section>
       </div>
       <Divisor />

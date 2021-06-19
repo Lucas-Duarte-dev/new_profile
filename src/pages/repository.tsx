@@ -52,6 +52,7 @@ export default function Repository({ repos }: RepositoryProps) {
                   <span>{repo.created_at}</span>
                 </div>
                 <span>{repo.language}</span>
+                <p>Faça um clone deste projeto com o link abaixo</p>
                 <div>
                   <input type="text" value={repo.html_url} disabled />
 

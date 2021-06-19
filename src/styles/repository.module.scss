@@ -60,6 +60,7 @@
 
   & > section {
     margin-bottom: 1rem;
+
     & > div:nth-child(1) {
       & > span {
         font-size: 1.2rem;
@@ -86,9 +87,17 @@
     & > span {
       border: 1px solid var(--purple);
       color: var(--purple);
+      width: 6rem;
+      text-align: center;
       font-size: 0.8rem;
       padding: 0.2rem 0.5rem;
       border-radius: 0.8rem;
+    }
+
+    & > p {
+      color: #e1e1e1;
+      margin-top: 1rem;
+      font-family: KoHo, sans-serif;
     }
 
     & > div {
