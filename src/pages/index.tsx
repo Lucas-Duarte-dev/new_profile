@@ -8,6 +8,7 @@ import styles from "../styles/app.module.scss";
 import Divisor from "../components/Divisor";
 import Modal from "../components/Modal";
 import { useModal } from "../context/modalContext";
+import { Loader } from "../components/Loader";
 
 type HomeProps = {
   user: User;
@@ -23,9 +24,14 @@ type User = {
   location: string;
   date: string;
   html_url: string;
+  public_repos: number;
 };
 
 export default function Home({ user }: HomeProps) {
+  if (!user) {
+    return <Loader />;
+  }
+
   const { handleOpenModal } = useModal();
 
   return (
@@ -63,21 +69,7 @@ export default function Home({ user }: HomeProps) {
             <a>Clique aqui para acessar</a>
           </div>
         </section>
-        <section>
-          <p>
-            Aqui apresento um pouco sobre como decidi entrar na área de
-            desenvolvimento e minhas motivações diárias 💜
-          </p>
-          <div>
-            <a href="">Clique aqui para acessar</a>
-          </div>
-        </section>
-        <section>
-          <p>Dê seu feedback 🙏🏻</p>
-          <div>
-            <a href="">Clique aqui para acessar</a>
-          </div>
-        </section>
+        <section></section>
       </div>
 
       <p>
@@ -108,6 +100,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
       locale: ptBR,
     }),
     html_url: data.html_url,
+    public_repos: Number(data.public_repos),
   };
 
   return {

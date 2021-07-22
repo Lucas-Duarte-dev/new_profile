@@ -141,4 +141,8 @@
       }
     }
   }
+
+  & > section:last-child {
+    grid-column: 1 / 3;
+  }
 }

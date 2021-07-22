@@ -75,12 +75,11 @@ export default function Repository({ repos }: RepositoryProps) {
 export const getServerSideProps: GetServerSideProps = async () => {
   const { data } = await api.get(`${process.env.PROFILE_GITHUB}/repos`);
 
-  const withoutForks = data
-    .filter((repo) => repo.fork !== true)
-    .reverse()
-    .slice(0, 6);
+  const withoutForks = data.filter((repo) => repo.fork !== true).reverse();
 
-  const repos = withoutForks.map((repo) => {
+  const sliceRepos = withoutForks.slice(0, 6);
+
+  const repos = sliceRepos.map((repo) => {
     return {
       id: repo.id,
       name: repo.name,
