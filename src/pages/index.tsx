@@ -18,6 +18,8 @@ import {
   SiPhp,
   SiMysql,
   SiDocker,
+  SiPostgresql,
+  SiMongodb,
 } from "react-icons/si";
 
 type HomeProps = {
@@ -113,13 +115,18 @@ export default function Home({ user }: HomeProps) {
             <li>
               <SiDocker color="#a77dcb" /> Docker
             </li>
+            <li>
+              <SiPostgresql color="#a77dcb" /> Postgres
+            </li>
+            <li>
+              <SiMongodb color="#a77dcb" /> MongoDB
+            </li>
           </ul>
         </section>
       </div>
-
       <p>
         Inspirado no tema{" "}
-        <a href="https://github.com/sdras/night-owl-vscode-theme">Night Owl</a>{" "}
+        <a href="https://github.com/sdras/night-owl-vscode-theme">Night Owl</a>
         💜
       </p>
 
