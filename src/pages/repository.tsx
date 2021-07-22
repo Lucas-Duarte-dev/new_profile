@@ -7,6 +7,7 @@ import { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import styles from "../styles/repository.module.scss";
+import { Loader } from "../components/Loader";
 
 type RepositoryProps = {
   repos: Repos[];
@@ -29,7 +30,11 @@ type User = {
 };
 
 export default function Repository({ repos }: RepositoryProps) {
-  const [copySuccess, setCopySuccess] = useState(false);
+  if (!repos) {
+    return <Loader />;
+  }
+
+  const [textCopy, setTextCopy] = useState("");
 
   return (
     <div className={styles.repos_container}>
@@ -39,7 +44,7 @@ export default function Repository({ repos }: RepositoryProps) {
         </Link>
       </header>
       <div>
-        {repos.map((repo, index) => {
+        {repos.map((repo) => {
           return (
             <div key={repo.id} className={styles.repos}>
               <header>
@@ -58,9 +63,18 @@ export default function Repository({ repos }: RepositoryProps) {
 
                   <CopyToClipboard
                     text={repo.html_url}
-                    onCopy={() => setCopySuccess(true)}
+                    onCopy={(text) => {
+                      setTextCopy(text);
+                    }}
                   >
-                    <button onClick={() => setCopySuccess(true)}>Copiar</button>
+                    <button
+                      className={
+                        repo.html_url === textCopy ? styles.copied : ""
+                      }
+                      onClick={() => !false}
+                    >
+                      {repo.html_url === textCopy ? "Copiado" : "Copiar"}
+                    </button>
                   </CopyToClipboard>
                 </div>
               </section>
@@ -75,9 +89,9 @@ export default function Repository({ repos }: RepositoryProps) {
 export const getServerSideProps: GetServerSideProps = async () => {
   const { data } = await api.get(`${process.env.PROFILE_GITHUB}/repos`);
 
-  const withoutForks = data.filter((repo) => repo.fork !== true).reverse();
+  const withoutForks = data.filter((repo) => repo.fork !== true);
 
-  const sliceRepos = withoutForks.slice(0, 6);
+  const sliceRepos = withoutForks.slice(0, 10);
 
   const repos = sliceRepos.map((repo) => {
     return {

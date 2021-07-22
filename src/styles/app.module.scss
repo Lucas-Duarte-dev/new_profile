@@ -160,13 +160,13 @@
         line-height: 2.5;
       }
 
-      > li + li::before {
+      > li:not(:last-child)::after {
         content: "";
         height: 4px;
         width: 4px;
         background: var(--blue-300);
         position: absolute;
-        left: -5px;
+        right: 0;
         top: 50%;
         border-radius: 50%;
         transform: translate(50%, -50%);

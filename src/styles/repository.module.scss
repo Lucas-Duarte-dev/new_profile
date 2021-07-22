@@ -130,6 +130,10 @@
         &:hover {
           filter: brightness(0.8);
         }
+
+        &.copied {
+          color: var(--green-300);
+        }
       }
     }
   }
