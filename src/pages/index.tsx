@@ -3,12 +3,22 @@ import React, { useState } from "react";
 import { format, parseISO } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 import { api } from "../services/api";
-
 import styles from "../styles/app.module.scss";
 import Divisor from "../components/Divisor";
 import Modal from "../components/Modal";
 import { useModal } from "../context/modalContext";
 import { Loader } from "../components/Loader";
+import {
+  SiTypescript,
+  SiJavascript,
+  SiCss3,
+  SiHtml5,
+  SiReact,
+  SiNodeDotJs,
+  SiPhp,
+  SiMysql,
+  SiDocker,
+} from "react-icons/si";
 
 type HomeProps = {
   user: User;
@@ -69,7 +79,42 @@ export default function Home({ user }: HomeProps) {
             <a>Clique aqui para acessar</a>
           </div>
         </section>
-        <section></section>
+        <section>
+          <h2>Tecnologias que uso ou já usei</h2>
+          <ul>
+            <li>
+              <SiHtml5 color="#a77dcb" />
+              HTML5
+            </li>
+            <li>
+              <SiCss3 color="#a77dcb" />
+              CSS3
+            </li>
+            <li>
+              <SiJavascript color="#a77dcb" />
+              JavaScript
+            </li>
+            <li>
+              <SiTypescript color="#a77dcb" /> TypeScript
+            </li>
+            <li>
+              <SiReact color="#a77dcb" />
+              ReactJS
+            </li>
+            <li>
+              <SiNodeDotJs color="#a77dcb" /> NodeJS
+            </li>
+            <li>
+              <SiPhp color="#a77dcb" /> PHP
+            </li>
+            <li>
+              <SiMysql color="#a77dcb" /> MySQL
+            </li>
+            <li>
+              <SiDocker color="#a77dcb" /> Docker
+            </li>
+          </ul>
+        </section>
       </div>
 
       <p>
