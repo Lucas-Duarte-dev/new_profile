@@ -47,10 +47,6 @@ export default function Repository({ repos }: RepositoryProps) {
         {repos.map((repo) => {
           return (
             <div key={repo.id} className={styles.repos}>
-              <header>
-                <img src={repo.owner.avatar_url} alt={repo.owner.login} />
-                <span>{repo.owner.login}</span>
-              </header>
               <section>
                 <div>
                   <span>{repo.name}</span>

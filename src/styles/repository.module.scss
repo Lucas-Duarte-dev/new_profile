@@ -43,22 +43,6 @@
   flex-direction: column;
   justify-content: space-between;
 
-  & > header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.8rem;
-    & > img {
-      border-radius: 50%;
-      width: 45px;
-      height: 45px;
-      margin-right: 0.5rem;
-    }
-    & > span {
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
-  }
-
   & > section {
     margin-bottom: 1rem;
 
