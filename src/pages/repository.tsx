@@ -1,7 +1,7 @@
 import { format, parseISO } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 import { GetServerSideProps } from "next";
-import { api } from "../services/api";
+import { api } from "../../infra/services/api";
 import Link from "next/link";
 import { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
