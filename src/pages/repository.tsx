@@ -1,13 +1,13 @@
 import { format, parseISO } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 import { GetServerSideProps } from "next";
-import { api } from "../../infra/services/api";
+import { api } from "../infra/services/api";
 import Link from "next/link";
 import { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
-import styles from "../styles/repository.module.scss";
-import { Loader } from "../components/Loader";
+import styles from "../domain/styles/repository.module.scss";
+import { Loader } from "../domain/components/Loader";
 
 type RepositoryProps = {
   repos: Repos[];

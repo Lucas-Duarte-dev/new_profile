@@ -1,8 +1,8 @@
-import "../styles/global.scss";
-import styles from "../styles/containerApp.module.scss";
-import ModalContextProvider from "../context/modalContext";
+import "../domain/styles/global.scss";
+import styles from "../domain/styles/containerApp.module.scss";
+import ModalContextProvider from "../domain/context/modalContext";
 
-function MyApp({ Component, pageProps, user }) {
+function MyApp({ Component, pageProps }) {
   return (
     <ModalContextProvider>
       <div className={styles.containerApp}>

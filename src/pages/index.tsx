@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
-import styles from "../styles/app.module.scss";
-import {CardProfile} from "../components/CardProfile";
+import styles from "../domain/styles/app.module.scss";
+import {CardProfile} from "../domain/components/CardProfile";
 
 export default function Home() {
 
