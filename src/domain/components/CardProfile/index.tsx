@@ -1,4 +1,4 @@
-import {FiGithub} from "react-icons/all";
+import {FiGithub} from "react-icons/fi";
 import styles from './styles.module.scss';
 type GithubUser = {
     avatar_url: string;
