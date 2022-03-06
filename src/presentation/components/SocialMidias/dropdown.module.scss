@@ -1,0 +1,62 @@
+.dropdown {
+  margin-top: 2rem;
+  background: rgba(54, 41, 117, 0.17);
+  width: 23.6rem;
+  border-radius: 0.4rem;
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+
+    > span {
+      font-size: 1.2rem;
+    }
+
+    > svg {
+      width: 30px;
+      height: 30px;
+      fill: var(--white);
+    }
+  }
+
+}
+
+.socialMedia {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: height 0.3s ease-in;
+  justify-content: center;
+  height: 0;
+
+  & > a {
+    width: 100%;
+    padding: 0.783rem 1rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    transition: background 0.3s;
+
+    & > span {
+      margin-left: 0.8rem;
+      color: var(--description);
+    }
+  }
+  & > a + a {
+    margin-top: 0.7rem;
+  }
+
+  & > a:hover {
+    background: rgba(255, 255, 255, 0.198);
+  }
+}
+
+.dropdownActive {
+  height: fit-content;
+}
+
+

@@ -1,14 +1,15 @@
-import "../domain/styles/global.scss";
-import styles from "../domain/styles/containerApp.module.scss";
-import ModalContextProvider from "../domain/context/modalContext";
+import "../presentation/styles/global.scss";
+import styles from "../presentation/styles/containerApp.module.scss";
+import {QueryClientProvider} from "react-query";
+import {queryClient} from "../infra/services/queryClient";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ModalContextProvider>
-      <div className={styles.containerApp}>
-        <Component {...pageProps} />
-      </div>
-    </ModalContextProvider>
+      <QueryClientProvider client={queryClient}>
+          <div className={styles.containerApp}>
+            <Component {...pageProps} />
+          </div>
+      </QueryClientProvider>
   );
 }
 

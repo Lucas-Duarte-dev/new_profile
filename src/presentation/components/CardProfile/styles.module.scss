@@ -1,40 +1,29 @@
 .profile_wrapper {
-  min-height: 20rem;
-  height: 40rem;
-  min-width: 17rem;
-  width: 30rem;
+  width: fit-content;
   margin-top: 2rem;
+  padding: 1rem;
   background: rgba(54, 41, 117, 0.17);
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.4);
   border-radius: 0.7rem;
   overflow: hidden;
+
+  display: flex;
+  align-items: flex-start;
 }
 
 .profile_image {
-  width: 100%;
-  position: relative;
-  > section  {
-    img {
-      width: 100%;
-      height: 12rem;
-      object-fit: cover;
-    }
-  }
+
   > img {
     width: 95px;
     height: 95px;
-    border-radius: 50%;
+    border-radius: 25%;
     object-fit: cover;
-    position: absolute;
-    top: 75%;
-    left: 0;
     margin: 0 1rem;
     border: 3px solid var(--blue-900)
   }
 }
 
 .profile_info {
-  margin-top: 3rem;
   padding: 0 1rem;
 
   h2 {

@@ -6,8 +6,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
-import styles from "../domain/styles/repository.module.scss";
-import { Loader } from "../domain/components/Loader";
+import styles from "../presentation/styles/repository.module.scss";
+import { Loader } from "../presentation/components/Loader";
 
 type RepositoryProps = {
   repos: Repos[];
